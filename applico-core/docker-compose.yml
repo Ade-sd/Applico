@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    environment:
+      POSTGRES_USER: myusr
+      POSTGRES_PASSWORD: mypwd
+      POSTGRES_DB: applico
+    ports:
+      - "5432:5432"
+    networks:
+      - pgnetwork
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: adesd16@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: mypwd
+    ports:
+      - "2345:80"
+    networks:
+      - pgnetwork
+
+networks:
+  pgnetwork:
