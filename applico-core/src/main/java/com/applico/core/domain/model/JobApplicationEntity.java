@@ -23,8 +23,8 @@ public class JobApplicationEntity extends Auditable {
     @Column(name = "company_id")
     private Integer companyId;
 
-    @Column(name = "description", nullable = false)
-    private String description;
+    @Column(name = "title", nullable = false)
+    private String title;
 
     @Column(name = "about", nullable = false, length = 5000)
     private String about;
