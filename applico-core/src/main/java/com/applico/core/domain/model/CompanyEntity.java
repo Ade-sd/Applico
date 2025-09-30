@@ -22,14 +22,20 @@ public class CompanyEntity extends Auditable {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "found_at")
-    private LocalDate foundAt;
+    @Column(name = "founded")
+    private Integer founded;
 
-    @Column(name = "information", length = 5000)
-    private String information;
+    @Column(name = "industry")
+    private String industry;
 
-    @Column(name = "headquarter_location")
-    private String headquarterLocation;
+    @Column(name = "about", length = 5000)
+    private String about;
+
+    @Column(name = "website")
+    private String website;
+
+    @Column(name = "headquarter")
+    private String headquarter;
 
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private List<JobApplicationEntity> jobApplications = new ArrayList<>();
